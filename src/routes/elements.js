@@ -31,6 +31,12 @@ export const LazyPricing = Loadable(lazy(() => import("../pages/pricing/pricing"
 export const LazyReservation = Loadable(lazy(() => import("../pages/reservation/reservation")));
 export const LazyServices = Loadable(lazy(() => import("../pages/services/services")));
 
+//------------------ Terms ans Policy ------------------
+export const LazyTerms = Loadable(lazy(() => import("../pages/terms/terms")));
+export const LazyPrivacy = Loadable(lazy(() => import("../pages/privacy/privacy")));
+export const LazySales = Loadable(lazy(() => import("../pages/sales/sales")));
+export const LazyFAQ = Loadable(lazy(() => import("../pages/faq/faq")));
+
 //-------------------Redirects-------------------
 export const Page500 = Loadable(lazy(() => import("../pages/redirects/page-500")));
 export const Page404 = Loadable(lazy(() => import("../pages/redirects/page-404")));

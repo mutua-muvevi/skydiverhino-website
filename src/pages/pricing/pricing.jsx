@@ -1,9 +1,12 @@
 import { Page } from "../../components/page";
+import ReusableBanner from "../../modules/banner";
+import PricingBody from "./sections/body";
 
 const Pricing = () => {
 	return (
 		<Page title="Pricing">
-			Pricing
+			<ReusableBanner/>
+			<PricingBody/>
 		</Page>
 	);
 };
