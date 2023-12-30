@@ -7,12 +7,12 @@ import NavList from "./nav-list";
 
 // ----------------------------------------------------------------------
 
-NavSectionMini.propTypes = {
+NavSectionMiniComponent.propTypes = {
 	sx: PropTypes.object,
 	data: PropTypes.array,
 };
 
-function NavSectionMini({ data, sx, ...other }) {
+function NavSectionMiniComponent({ data, sx, ...other }) {
 	return (
 		<Stack
 			spacing={0.5}
@@ -34,7 +34,14 @@ function NavSectionMini({ data, sx, ...other }) {
 	);
 }
 
-export default memo(NavSectionMini);
+
+const NavSectionMini = memo(NavSectionMiniComponent);
+
+export default NavSectionMini;
+
+
+
+
 
 // ----------------------------------------------------------------------
 

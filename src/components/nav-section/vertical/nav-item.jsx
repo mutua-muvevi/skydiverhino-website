@@ -4,8 +4,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { Box, Tooltip, Link, ListItemText } from "@mui/material";
 // locales
 import { useLocales } from "../../../locales";
-// auth
-import RoleBasedGuard from "../../../auth/role-based-guard";
 //
 import Iconify from "../../iconify";
 //
@@ -31,7 +29,7 @@ export default function NavItem({
 }) {
 	const { translate } = useLocales();
 
-	const { title, path, icon, info, children, disabled, caption, roles } =
+	const { title, path, icon, info, children, disabled, caption } =
 		item;
 
 	const subItem = depth !== 1;
@@ -99,32 +97,23 @@ export default function NavItem({
 		</StyledItem>
 	);
 
-	const renderItem = () => {
-		// ExternalLink
-		if (isExternalLink)
-			return (
-				<Link
-					href={path}
-					target="_blank"
-					rel="noopener"
-					underline="none"
-				>
-					{renderContent}
-				</Link>
-			);
-
-		// Has child
-		if (children) {
-			return renderContent;
-		}
-
-		// Default
+	// ExternalLink
+	if (isExternalLink)
 		return (
-			<Link component={RouterLink} to={path} underline="none">
+			<Link href={path} target="_blank" rel="noopener" underline="none">
 				{renderContent}
 			</Link>
 		);
-	};
 
-	return <RoleBasedGuard roles={roles}> {renderItem()} </RoleBasedGuard>;
+	// Has child
+	if (children) {
+		return renderContent;
+	}
+
+	// Default
+	return (
+		<Link component={RouterLink} to={path} underline="none">
+			{renderContent}
+		</Link>
+	);
 }
