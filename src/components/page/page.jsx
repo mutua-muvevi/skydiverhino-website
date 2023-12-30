@@ -6,18 +6,8 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 // ----------------------------------------------------------------------
-const StyledPage = styled(Box)(({ theme }) => ({
+const StyledPage = styled(Box)(() => ({
 	minHeight: "100%",
-	paddingTop: theme.spacing(2),
-	paddingBottom: theme.spacing(2),
-	paddingRight: theme.spacing(2),
-	paddingLeft: theme.spacing(2),
-	[theme.breakpoints.up("sm")]: {
-		paddingTop: theme.spacing(3),
-		paddingBottom: theme.spacing(3),
-		paddingLeft: theme.spacing(3),
-		paddingRight: theme.spacing(3),
-	},
 }));
 
 const Page = forwardRef(({ children, title = "", meta, ...other }, ref) => (

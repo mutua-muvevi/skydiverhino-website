@@ -42,8 +42,7 @@ const App = () => {
 											<ThemeLocalization>
 												<SnackbarProvider>
 													<StyledChart />
-													{/* <Router /> */}
-													Running
+													<Router />
 												</SnackbarProvider>
 											</ThemeLocalization>
 										</ThemeSettings>

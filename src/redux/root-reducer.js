@@ -7,11 +7,7 @@ import storage from "redux-persist/lib/storage";
 import ReservationsReducer from "./slices/reservations";
 import ServicesReducer from "./slices/services";
 import BlogReducer from "./slices/blogs";
-import AnnouncementReducer from "./slices/announcements"
-import TermReducer from "./slices/terms";
-import ManualReducer from "./slices/manuals";
-import CurriculumReducer from "./slices/curriculums";
-import VoicemailReducer from "./slices/voicemails";
+import AnnouncementReducer from "./slices/announcements";
 import EventReducer from "./slices/events";
 
 // ----------------------------------------------------------------------
@@ -20,17 +16,9 @@ const config = {
 	key: "root",
 	storage,
 	whitelist: [
-		"user",
-		"storage",
 		"reservation",
 		"blogs",
 		"announcements",
-		"leads",
-		"clients",
-		"terms",
-		"manuals",
-		"curriculums",
-		"voicemails",
 		"services",
 		"events",
 	],
@@ -43,11 +31,6 @@ export const rootReducer = combineReducers({
 	services: ServicesReducer,
 	blog: BlogReducer,
 	announcements: AnnouncementReducer,
-	
-	terms: TermReducer,
-	manuals: ManualReducer,
-	curriculum: CurriculumReducer,
-	voicemails: VoicemailReducer,
 	events: EventReducer,
 
 });

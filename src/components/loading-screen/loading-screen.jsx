@@ -1,14 +1,9 @@
 import { m } from "framer-motion";
-import { useLocation } from "react-router-dom";
 // @mui
 import { alpha, styled } from "@mui/material/styles";
-import { Box, LinearProgress } from "@mui/material";
-// hooks
-import useResponsive from "../../hooks/use-responsive";
+import { Box } from "@mui/material";
 // config
 import { NAV, HEADER } from "../../config/global";
-// auth
-import { useAuthContext } from "../../auth/use-auth-context";
 //
 import Logo from "../logo";
 import ProgressBar from "../progress-bar";
@@ -32,16 +27,9 @@ const StyledRoot = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function LoadingScreen() {
-	const { pathname } = useLocation();
-
-	const isDesktop = useResponsive("up", "lg");
-
-	const { isInitialized } = useAuthContext();
 
 	const { themeLayout } = useSettingsContext();
 
-	const isDashboard =
-		isInitialized && pathname.includes("/admin/freelance/home") && isDesktop;
 
 	const size =
 		(themeLayout === "mini" && NAV.W_DASHBOARD_MINI) ||
@@ -54,23 +42,15 @@ export default function LoadingScreen() {
 
 			<StyledRoot
 				sx={{
-					...(isDashboard && {
-						width: `calc(100% - ${size}px)`,
-						height: `calc(100% - ${HEADER.H_DASHBOARD_DESKTOP}px)`,
-						...(themeLayout === "horizontal" && {
-							width: 1,
-							height: `calc(100% - ${size}px)`,
-						}),
+					width: `calc(100% - ${size}px)`,
+					height: `calc(100% - ${HEADER.H_DASHBOARD_DESKTOP}px)`,
+					...(themeLayout === "horizontal" && {
+						width: 1,
+						height: `calc(100% - ${size}px)`,
 					}),
 				}}
 			>
-				{isDashboard ? (
-					<LinearProgress
-						color="inherit"
-						sx={{ width: 1, maxWidth: 360 }}
-					/>
-				) : (
-					<>
+				<>
 						<m.div
 							animate={{
 								scale: [1, 0.9, 0.9, 1, 1],
@@ -148,7 +128,6 @@ export default function LoadingScreen() {
 							}}
 						/>
 					</>
-				)}
 			</StyledRoot>
 		</>
 	);
