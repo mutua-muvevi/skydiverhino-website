@@ -12,7 +12,7 @@ export const HOST_API_KEY = import.meta.env.VITE_API_URL || '';
 
 export const HEADER = {
 	H_MOBILE: 50,
-	H_MAIN_DESKTOP: 60,
+	H_MAIN_DESKTOP: 75,
 	H_DASHBOARD_DESKTOP: 60,
 	H_DASHBOARD_DESKTOP_OFFSET: 92 - 32,
 };

@@ -29,7 +29,11 @@ export default function Header() {
 	const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
 	return (
-		<AppBar ref={carouselRef} color="transparent" sx={{ boxShadow: 0 }}>
+		<AppBar
+			ref={carouselRef}
+			color="transparent"
+			sx={{ boxShadow: 0, borderBottom: `1px dashed ${theme.palette.text.disabled}` }}
+		>
 			<Toolbar
 				disableGutters
 				sx={{
@@ -53,6 +57,7 @@ export default function Header() {
 				}}
 			>
 				<Container
+					maxWidth="xl"
 					sx={{ height: 1, display: "flex", alignItems: "center" }}
 				>
 					<Logo />
