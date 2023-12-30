@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import useActiveLink from "../../../hooks/use-active-link";
 //
 import { StyledPopover } from "./styles";
-import NavItem from "./NavItem";
+import NavItem from "./nav-item";
 
 // ----------------------------------------------------------------------
 

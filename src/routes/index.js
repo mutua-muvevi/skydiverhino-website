@@ -1,5 +1,4 @@
 import { Navigate, useRoutes } from "react-router-dom";
-import Layout from "../layout/layout";
 import {
 	ComingSoonPage,
 	LazyAbout,
@@ -17,6 +16,7 @@ import {
 } from "./elements";
 
 import CompactLayout from "../layout/compact";
+import MainLayout from "../layout/main/layout";
 
 //-----------------------------------------------------------
 export default function Router() {
@@ -24,7 +24,7 @@ export default function Router() {
 		{ path: "/", element: <Navigate to="/main/home" replace /> },
 		{
 			path: "main",
-			element: <Layout />,
+			element: <MainLayout />,
 			children: [
 				{ path: "home", element: <LazyHome /> },
 				{ path: "about", element: <LazyAbout /> },
