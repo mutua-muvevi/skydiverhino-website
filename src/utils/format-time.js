@@ -29,3 +29,8 @@ export function fToNow(date) {
 		})
 		: "";
 }
+
+//current year
+export function fYear() {
+	return new Date().getFullYear();
+}
