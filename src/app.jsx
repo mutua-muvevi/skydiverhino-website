@@ -1,3 +1,4 @@
+import './fonts.css';
 import { BrowserRouter } from "react-router-dom";
 
 //helmet provider

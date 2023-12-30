@@ -50,7 +50,7 @@ const StyledDataGridContainer = styled(Card)(({ theme }) => ({
 const StyledDataGridHeader = styled(CardHeader)(({ theme }) => ({
 	backgroundColor: theme.palette.primary.main,
 	color: theme.palette.primary.contrastText,
-	fontFamily: "'Rubik', sans-serif",
+	fontFamily: "'IBM Plex Sans Condensed', sans-serif",
 	padding: 15,
 }));
 
