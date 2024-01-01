@@ -1,15 +1,11 @@
-import { Container, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
-const ReusableVideoContent = ({ title, subTitle, src, height, hasButton }) => {
-	const isMobile = window.innerWidth < 768;
-	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+const ReusableVideoContent = ({ title, subTitle, src, height, textAlign }) => {
 
 	return (
-		<>
+		<div style={{ position: "relative", height: height ? height : "80vh" }}>
 			<video
-				width="100%"
-				height={height}
 				autoPlay
 				muted
 				loop
@@ -17,7 +13,11 @@ const ReusableVideoContent = ({ title, subTitle, src, height, hasButton }) => {
 					objectFit: "cover",
 					width: "100%",
 					height: "100%",
-					position: isMobile ? "relative" : "absolute",
+					position: "absolute",
+					top: 0,
+					left: 0,
+					zIndex: 1,
+
 				}}
 			>
 				<source src={src} type="video/mp4" />
@@ -26,24 +26,28 @@ const ReusableVideoContent = ({ title, subTitle, src, height, hasButton }) => {
 
 			<Stack
 				direction="column"
-				justifyContent={isDesktop ? "center" : "flex-end"}
+				justifyContent="center"
 				sx={{
 					position: "absolute",
-					top: isDesktop ? "0" : "auto",
-					transform: isDesktop ? "" : "translateY(-110%)",
-					textAlign: "left",
-					color: "white",
+					backgroundAttachment: "fixed",
+					top: 0,
+					left: 0,
+					right: 0,
+					bottom: 0,
 					zIndex: 2,
-					borderRadius: "4px",
-					width: "100%",
-					height: height,
+					color: "white",
+					textAlign: "center",
+					pb: 4,
+					pt: 4,
+					backgroundColor: "rgba(0,0,0,0.5)",
 				}}
 			>
 				<Container maxWidth="xl">
 					<Stack
 						direction="column"
-						justifyContent="center"
-						alignItems="center"
+						textAlign={textAlign ? textAlign : "left"}
+						sx={{ height: "100%" }}
+						spacing={3}
 					>
 						<Typography
 							variant="h2"
@@ -56,13 +60,14 @@ const ReusableVideoContent = ({ title, subTitle, src, height, hasButton }) => {
 							variant="h6"
 							component="div"
 							color="text.primary"
+							textAlign={textAlign ? textAlign : "justify"}
 						>
 							{subTitle}
 						</Typography>
 					</Stack>
 				</Container>
 			</Stack>
-		</>
+		</div>
 	);
 };
 
@@ -72,6 +77,7 @@ ReusableVideoContent.propTypes = {
 	src: PropTypes.string.isRequired,
 	height: PropTypes.string.isRequired,
 	hasButton: PropTypes.bool.isRequired,
+	textAlign: PropTypes.string,
 };
 
 export default ReusableVideoContent;

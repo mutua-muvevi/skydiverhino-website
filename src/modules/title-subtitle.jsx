@@ -2,7 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Stack, Typography, alpha } from "@mui/material";
 import PropTypes from "prop-types";
 
-const TitleSubtitle = ({ title, subtitle, position }) => {
+const TitleSubtitle = ({ title, subtitle, position, color }) => {
 	const theme = useTheme();
 
 	return (
@@ -16,12 +16,12 @@ const TitleSubtitle = ({ title, subtitle, position }) => {
 		>
 			<Typography
 				variant="h4"
-				color="primary"
 				style={{
 					fontSize: "50px",
 					textTransform: "uppercase",
 					opacity: 0.5,
 					position: "relative",
+					color: color ? color : "inherit"
 				}}
 			>
 				{title}
@@ -35,6 +35,7 @@ TitleSubtitle.propTypes = {
 	title: PropTypes.string.isRequired,
 	subtitle: PropTypes.string.isRequired,
 	position: PropTypes.oneOf(["left", "center", "right"]).isRequired,
+	color: PropTypes.string,
 };
 
 export default TitleSubtitle;

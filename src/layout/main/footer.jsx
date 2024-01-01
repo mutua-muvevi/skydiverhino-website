@@ -47,6 +47,8 @@ const LINKS = [
 	},
 ];
 
+const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg"
+
 // ----------------------------------------------------------------------
 
 export default function Footer() {
@@ -82,8 +84,12 @@ export default function Footer() {
 			component="footer"
 			sx={{
 				position: "relative",
-				bgcolor: "background.default",
-				borderTop: `1px dashed ${theme.palette.text.disabled}`
+				borderTop: `1px dashed ${theme.palette.text.disabled}`,
+				backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${image})`,
+				backgroundSize: "cover",
+				backgroundAttachment: "fixed",
+				color: "#fff",
+				py: 10,
 			}}
 		>
 

@@ -22,6 +22,7 @@ const HomeTandem = () => {
 				subTitle="The best skydiving experience in the world"
 				content={content}
 				images={images}
+				backgroundImage={images[1]}
 			/>
 		</>
 	);
