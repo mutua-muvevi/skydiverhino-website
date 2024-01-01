@@ -34,7 +34,7 @@ const typography = {
 	h1: {
 		fontWeight: 800,
 		lineHeight: 80 / 64,
-		fontSize: pxToRem(80),
+		fontSize: pxToRem(40),
 		...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
 	},
 	h2: {
@@ -70,35 +70,35 @@ const typography = {
 	subtitle1: {
 		fontWeight: 600,
 		lineHeight: 1.5,
-		fontSize: pxToRem(28),
+		fontSize: pxToRem(16),
 	},
 	subtitle2: {
 		fontWeight: 600,
 		lineHeight: 22 / 14,
-		fontSize: pxToRem(22),
+		fontSize: pxToRem(14),
 	},
 	body1: {
 		lineHeight: 1.5,
-		fontSize: pxToRem(21),
+		fontSize: pxToRem(16),
 	},
 	body2: {
 		lineHeight: 22 / 14,
-		fontSize: pxToRem(20),
+		fontSize: pxToRem(14),
 	},
 	caption: {
 		lineHeight: 1.5,
-		fontSize: pxToRem(18),
+		fontSize: pxToRem(12),
 	},
 	overline: {
 		fontWeight: 700,
 		lineHeight: 1.5,
-		fontSize: pxToRem(18),
+		fontSize: pxToRem(12),
 		textTransform: "uppercase",
 	},
 	button: {
 		fontWeight: 700,
 		lineHeight: 24 / 14,
-		fontSize: pxToRem(18),
+		fontSize: pxToRem(14),
 		textTransform: "capitalize",
 	},
 };
