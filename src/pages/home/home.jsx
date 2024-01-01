@@ -13,7 +13,7 @@ const Home = () => {
 			<ReusableBanner
 				type="video"
 				src={video}
-				height="100%"
+				height="100vh"
 				title="Skydive Rhino"
 				subTitle="The best skydiving experience in the world"
 			/>

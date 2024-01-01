@@ -1,6 +1,6 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
-import ContentBlocks from "../../modules/content-blocks";
+import ContentBlocks from "../../modules/content/blocks";
 
 const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
 
