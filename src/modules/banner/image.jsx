@@ -21,7 +21,6 @@ const BannerImage = ({ title, subTitle, src, height, hasButton }) => {
 				backgroundAttachment: "fixed",
 				width: "100%",
 				height: height ? height : "70vh",
-				// backgroundColor: "red",
 				top:0
 			}}
 		>
@@ -68,20 +67,6 @@ const BannerImage = ({ title, subTitle, src, height, hasButton }) => {
 				</Grid>
 			</Container>
 		</Stack>
-		// <img
-		// 	src={src}
-		// 	alt="Banner background"
-		// 	style={{
-		// 		objectFit: "cover",
-		// 		position: isDesktop ? "absolute" : "", // Position it absolutely to fill the banner container
-		// 		top: 0,
-		// 		left: 0,
-		// 		width: "100%",
-		// 		height: height ? height : "70vh",
-		// 		overflow: "hidden",
-		// 		backgroundAttachment: "fixed",
-		// 	}}
-		// />
 	);
 };
 

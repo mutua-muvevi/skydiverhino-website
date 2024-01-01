@@ -8,6 +8,8 @@ export const ALL_ROUTES = {
 	PRICING: "/main/pricing",
 	RESERVATION: "/main/reservation",
 	SERVICES: "/main/services",
+	TANDEM: "/main/tandem",
+	AFF: "/main/aff",
 	// Error routes
 	PAGE_403: "/403",
 	PAGE_404: "/404",

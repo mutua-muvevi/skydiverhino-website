@@ -1,6 +1,7 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import {
 	ComingSoonPage,
+	LazyAFF,
 	LazyAbout,
 	LazyContact,
 	LazyGallery,
@@ -9,6 +10,7 @@ import {
 	LazyPricing,
 	LazyReservation,
 	LazyServices,
+	LazyTandem,
 	MaintenancePage,
 	Page403,
 	Page404,
@@ -34,6 +36,8 @@ export default function Router() {
 				{ path: "pricing", element: <LazyPricing /> },
 				{ path: "reservation", element: <LazyReservation /> },
 				{ path: "services", element: <LazyServices /> },
+				{ path: "tandem", element: <LazyTandem /> },
+				{ path: "aff", element: <LazyAFF /> },
 			],
 		},
 		{ path: "*", element: <Navigate to="/404" replace /> },

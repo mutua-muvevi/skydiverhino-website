@@ -12,7 +12,7 @@ const ReusableBanner = ({ title, subTitle, type, src, height, hasButton }) => {
 	return (
 		<Box
 			sx={{
-				height: isDesktop ? "100vh" : "auto",
+				height: isDesktop ? height : "auto",
 				overflow: "hidden",
 				marginTop: isDesktop ? -20 : -12,
 			}}
