@@ -16,7 +16,7 @@ const BannerVideo = ({ title, subTitle, src, height, hasButton  }) => {
 					objectFit: "cover",
 					width: "100%",
 					height: "100%",
-					position: isMobile ? "relative" : "fixed",
+					position: isMobile ? "relative" : "absolute",
 				}}
 			>
 				<source src={src} type="video/mp4" />

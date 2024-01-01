@@ -20,12 +20,17 @@ const navConfig = [
 	{
 		title: "Tandem",
 		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.SERVICES,
+		path: ALL_ROUTES.TANDEM,
 	},
 	{
 		title: "AFF",
 		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.SERVICES,
+		path: ALL_ROUTES.AFF,
+	},
+	{
+		title: "Pricing",
+		icon: <Iconify icon="ic:round-grain" />,
+		path: ALL_ROUTES.PRICING,
 	},
 	{
 		title: "News",
@@ -33,19 +38,14 @@ const navConfig = [
 		path: ALL_ROUTES.NEWS,
 	},
 	{
-		title: "Contact",
-		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.CONTACT,
-	},
-	{
 		title: "Gallery",
 		icon: <Iconify icon="ic:round-grain" />,
 		path: ALL_ROUTES.GALLERY,
 	},
 	{
-		title: "Pricing",
+		title: "Contact",
 		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.PRICING,
+		path: ALL_ROUTES.CONTACT,
 	},
 	// {
 	// 	title: "Pages",
