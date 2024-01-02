@@ -1,7 +1,8 @@
-import { Card, Stack } from "@mui/material";
+import { Card, CardActionArea, Dialog, Stack } from "@mui/material";
 import TitleSubtitle from "../../title-subtitle";
 import { Masonry } from "@mui/lab";
 import { Container } from "@mui/system";
+import { useState } from "react";
 
 const images = [
 	"https://res.cloudinary.com/dqweh6zte/image/upload/v1692719152/officechest/services/ppqibj8mpvumxmzj7kqb.jpg",
@@ -18,6 +19,14 @@ const images = [
 ];
 
 const ServiceGallery = () => {
+	const [open, setOpen] = useState(false);
+	const [selectedImage, setSelectedImage] = useState(null);
+
+	const handleOpen = (image) => {
+		console.log("open");
+		setSelectedImage(image);
+		setOpen(true);
+	}
 	return (
 		<div>
 			<Container maxWidth="xl" sx={{py: 10}}>
@@ -27,21 +36,39 @@ const ServiceGallery = () => {
 							<Masonry columns={{ xs: 2, sm: 3, md: 4 }} spacing={2}>
 								{images.map((image, index) => (
 									<Card key={index}>
-										<img
-											src={image}
-											alt={`Image ${index + 1}`}
-											style={{
-												width: "100%",
-												height: "100%",
-												objectFit: "cover",
-											}}
-										/>
+										<CardActionArea onClick={() => handleOpen(image)}>
+											<img
+												src={image}
+												alt={`Image ${index + 1}`}
+												style={{
+													width: "100%",
+													height: "100%",
+													objectFit: "cover",
+												}}
+											/>
+										</CardActionArea>
 									</Card>
 								))}
 							</Masonry>
 						</div>
 				</Stack>
 			</Container>
+
+			<Dialog
+				open={open}
+				onClose={() => setOpen(false)}
+				maxWidth="xl"
+				fullWidth
+			>
+				<img
+					src={selectedImage}
+					alt="Image"
+					style={{
+						width: "100%",
+						objectFit: "cover",
+					}}
+				/>
+			</Dialog>
 		</div>
 	);
 };

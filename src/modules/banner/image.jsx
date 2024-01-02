@@ -15,7 +15,7 @@ const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 			direction="column"
 			justifyContent={isDesktop ? "center" : "flex-end"}
 			sx={{
-				backgroundImage: `url(${src})`,
+				backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${src})`,
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundAttachment: "fixed",
@@ -30,7 +30,6 @@ const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 						<Stack
 							direction="column"
 							sx={{
-								backdropFilter: "blur(2px)",
 								width: "max-content",
 								paddingRight: 5,
 								paddingTop: 5,

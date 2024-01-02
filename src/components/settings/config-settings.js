@@ -1,7 +1,7 @@
 export const defaultSettings = {
 	themeMode: "dark",
 	themeDirection: "ltr",
-	themeContrast: "default",
+	themeContrast: "bold",
 	themeLayout: "vertical",
 	themeColorPresets: "default",
 	themeStretch: true,
