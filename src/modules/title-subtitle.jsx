@@ -2,7 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Stack, Typography, alpha } from "@mui/material";
 import PropTypes from "prop-types";
 
-const TitleSubtitle = ({ title, subtitle, position, color, divider }) => {
+const TitleSubtitle = ({ title, subtitle, position, color, divider, dividerColor }) => {
 	const theme = useTheme();
 
 	return (
@@ -12,7 +12,7 @@ const TitleSubtitle = ({ title, subtitle, position, color, divider }) => {
 			sx={{
 				borderBottom:
 					divider === true
-						? `1px solid ${alpha(theme.palette.text.primary, 0.2)}`
+						? `1px dashed ${dividerColor ? dividerColor : theme.palette.primary.main}`
 						: "none",
 				pb: 3,
 			}}
@@ -43,6 +43,7 @@ TitleSubtitle.propTypes = {
 	position: PropTypes.oneOf(["left", "center", "right"]),
 	color: PropTypes.string,
 	divider: PropTypes.bool,
+	dividerColor: PropTypes.string,
 };
 
 export default TitleSubtitle;
