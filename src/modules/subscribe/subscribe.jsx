@@ -1,5 +1,5 @@
 import { Button, Container, Grid, Stack, useMediaQuery } from "@mui/material";
-import { alpha, styled, useTheme } from "@mui/system";
+import { alpha, useTheme } from "@mui/system";
 
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -30,13 +30,6 @@ const FORM_VALIDATION = Yup.object().shape({
 		.required("Please add an email"),
 });
 
-const StyledGrid = styled(Grid)(() => ({}));
-
-const StyledGridItemText = styled(Grid)(() => ({
-	paddingTop: "50px",
-	paddingBottom: "50px",
-}));
-
 const imageStyle = {
 	width: "350px",
 	position: "relative",
@@ -54,13 +47,12 @@ const Subscribe = () => {
 		<>
 			<Stack
 				sx={{
-					py: { xs: 5, md: 10, lg: 20 },
+					py: { md: 10, lg: 20 },
 					position: "relative",
 					backgroundImage: `linear-gradient(to bottom, rgba(0,0,0, 0.7), rgba(0,0,0,0.76)), url(${Image})`,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					backgroundAttachment: "fixed",
-
 				}}
 			>
 				<Container
@@ -72,15 +64,12 @@ const Subscribe = () => {
 						),
 					}}
 				>
-					<StyledGrid container spacing={3}>
-						<StyledGridItemText
-							item
-							xs={12}
-							sm={12}
-							md={12}
-							lg={6}
-							xl={6}
-						>
+					<Grid
+						container
+						spacing={3}
+						sx={{ py: { xs: 10, lg: "0" } }}
+					>
+						<Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
 							<Stack
 								direction="column"
 								justifyContent="center"
@@ -129,7 +118,7 @@ const Subscribe = () => {
 									</Form>
 								</Formik>
 							</Stack>
-						</StyledGridItemText>
+						</Grid>
 						{isDesktop && (
 							<Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
 								<Stack
@@ -144,7 +133,7 @@ const Subscribe = () => {
 								</Stack>
 							</Grid>
 						)}
-					</StyledGrid>
+					</Grid>
 				</Container>
 			</Stack>
 		</>

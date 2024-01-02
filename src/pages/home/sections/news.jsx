@@ -105,7 +105,7 @@ const HomeNews = () => {
 																		item.content
 																	),
 																	200
-															  )
+															)
 															: ""}
 													</Typography>
 												</CardContent>
