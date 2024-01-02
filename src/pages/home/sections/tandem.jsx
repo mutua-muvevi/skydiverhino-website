@@ -19,7 +19,7 @@ const HomeTandem = () => {
 		<>
 			<ReusableIntroContent
 				title="Tandem Skydiving"
-				subTitle="The best skydiving experience in the world"
+				subtitle="The best skydiving experience in the world"
 				content={content}
 				images={images}
 				backgroundImage={images[1]}

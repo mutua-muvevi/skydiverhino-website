@@ -19,7 +19,6 @@ const TitleSubtitle = ({ title, subtitle, position, color }) => {
 				style={{
 					fontSize: "50px",
 					textTransform: "uppercase",
-					opacity: 0.5,
 					position: "relative",
 					color: color ? color : "inherit"
 				}}
