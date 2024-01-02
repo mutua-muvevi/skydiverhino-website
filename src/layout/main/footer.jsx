@@ -5,7 +5,6 @@ import {
 	Grid,
 	Link,
 	Stack,
-	Divider,
 	Container,
 	Typography,
 	IconButton,
@@ -71,7 +70,7 @@ export default function Footer() {
 			<Container>
 				<Logo sx={{ mb: 1, mx: "auto" }} />
 
-				<Typography variant="caption" component="div">
+				<Typography variant="h6" component="div">
 					© All rights reserved
 					<Link href="https://skydiverhinokenya.com/"> skydiverhinokenya.com </Link>
 				</Typography>
@@ -112,7 +111,7 @@ export default function Footer() {
 					</Grid>
 
 					<Grid item xs={8} md={3}>
-						<Typography variant="body2" sx={{ pr: { md: 5 } }}>
+						<Typography variant="h6" sx={{ pr: { md: 5 }, fontWeight:500 }}>
 							The starting point for your next project with
 							Minimal UI Kit, built on the newest version of
 							Material-UI ©, ready to be customized to your style.
@@ -152,7 +151,7 @@ export default function Footer() {
 								>
 									<Typography
 										component="div"
-										variant="overline"
+										variant="h5"
 									>
 										{list.headline}
 									</Typography>
@@ -165,7 +164,9 @@ export default function Footer() {
 											color="inherit"
 											variant="body2"
 										>
-											{link.name}
+											<Typography variant="h6" sx={{fontWeight: 500}}>
+												{link.name}
+											</Typography>
 										</Link>
 									))}
 								</Stack>
@@ -175,7 +176,7 @@ export default function Footer() {
 				</Grid>
 
 				<Typography
-					variant="caption"
+					variant="subtitle1"
 					component="div"
 					sx={{
 						mt: 10,

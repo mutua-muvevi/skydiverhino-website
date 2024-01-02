@@ -3,9 +3,7 @@ import {
 	Container,
 	Grid,
 	Stack,
-	Typography,
 	useMediaQuery,
-	alpha
 } from "@mui/material";
 import { styled } from "@mui/system";
 
@@ -13,14 +11,11 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
 import Textfield from "../../components/form/textfield/textfield";
-import Iconify from "../../components/iconify";
-import { useTheme } from "@emotion/react";
+import TitleSubtitle from "../title-subtitle";
 
 const Image =
 	"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg";
 const Person =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg";
-const background =
 	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg";
 
 const emailCapture = {
@@ -72,22 +67,9 @@ const Subscribe = () => {
 	const submitHandler = (values) => {
 		console.log(values);
 	};
-	const theme = useTheme();
 
 	return (
 		<>
-			<Iconify
-				icon="fluent-emoji-high-contrast:parachute"
-				width={isDesktop ? 400: 250}
-				sx={{
-					position: "absolute",
-					zIndex: 1,
-					color: `${alpha(theme.palette.primary.main, 0.5)}`,
-					textAlign: "center",
-					opacity: 0.2,
-					overflow: "hidden",
-				}}
-			/>
 			<Stack sx={{ py: { xs: 5, md: 10, lg: 20 }, position: "relative", }}>
 
 				<StyledWrapper maxWidth="xl">
@@ -114,21 +96,12 @@ const Subscribe = () => {
 								>
 									<Form>
 										<Stack direction="column" spacing={3}>
-											<Typography
-												variant="h2"
-												style={{ color: "#ffffff" }}
-												textAlign="justify"
-											>
-												{emailCapture.title}
-											</Typography>
-
-											<Typography
-												variant="subtitle1"
-												style={{ color: "#ffffff" }}
-												textAlign="justify"
-											>
-												{emailCapture.subtitle}
-											</Typography>
+											<TitleSubtitle
+												title={emailCapture.title}
+												subtitle={emailCapture.subtitle}
+												position="left"
+												color="#fff"
+											/>
 
 											<Stack
 												spacing={3}
