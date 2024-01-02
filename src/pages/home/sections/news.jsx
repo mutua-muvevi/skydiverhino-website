@@ -8,6 +8,8 @@ import {
 	Grid,
 	Stack,
 	Typography,
+	useTheme,
+	useMediaQuery,
 } from "@mui/material";
 import TitleSubtitle from "../../../modules/title-subtitle";
 import { sentenceCase } from "change-case";
@@ -42,6 +44,20 @@ const content = [
 ];
 
 const HomeNews = () => {
+	const theme = useTheme();
+	const isXl = useMediaQuery(theme.breakpoints.up("xl"));
+	const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+	const isMd = useMediaQuery(theme.breakpoints.up("md"));
+
+	let displayedContent = content;
+	if (isXl) {
+		displayedContent = content.slice(0, 4);
+	} else if (isLg) {
+		displayedContent = content.slice(0, 3);
+	} else if (isMd) {
+		displayedContent = content.slice(0, 2);
+	}
+
 	return (
 		<Stack sx={{ py: { xs: 5, md: 10 } }}>
 			<Container maxWidth="xl">
@@ -52,7 +68,7 @@ const HomeNews = () => {
 					/>
 					<div>
 						<Grid container spacing={3}>
-							{content.map((item, index) => {
+							{displayedContent.map((item, index) => {
 								return (
 									<Grid
 										item
@@ -89,7 +105,7 @@ const HomeNews = () => {
 																		item.content
 																	),
 																	200
-															)
+															  )
 															: ""}
 													</Typography>
 												</CardContent>

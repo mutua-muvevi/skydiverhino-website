@@ -1,4 +1,4 @@
-import { Card, Container, Grid, Stack, Typography } from "@mui/material";
+import { Card, Container, Grid, Stack, Typography, useTheme } from "@mui/material";
 import TitleSubtitle from "../title-subtitle";
 import { sentenceCase } from "change-case";
 import Masonry from "@mui/lab/Masonry";
@@ -11,6 +11,18 @@ const ReusableIntroContent = ({
 	subTitle,
 	backgroundImage,
 }) => {
+	const theme = useTheme();
+	// Function to determine grid item size based on content length and index
+	const getGridSize = (index) => {
+		const contentLength = content.length;
+		// If odd and last item
+		if (contentLength % 2 !== 0 && index === contentLength - 1) {
+			return 12; // Full width for the last item
+		} else {
+			return 6; // Half width for all other scenarios
+		}
+	};
+
 	return (
 		<div
 			style={{
@@ -19,7 +31,7 @@ const ReusableIntroContent = ({
 					: "",
 				backgroundSize: "cover",
 				backgroundAttachment: "fixed",
-				color: "#fff"
+				color: backgroundImage ? "#fff": theme.palette.text.primary,
 			}}
 		>
 			<Container maxWidth="xl">
@@ -39,10 +51,16 @@ const ReusableIntroContent = ({
 						<div>
 							<Grid container spacing={3}>
 								{content.map((text, index) => (
-									<Grid item xs={12} md={6} key={index}>
+									<Grid
+										item
+										xs={12}
+										md={getGridSize(index)}
+										key={index}
+									>
 										<Typography
-											variant="body1"
+											variant="h4"
 											textAlign="justify"
+											sx={{fontWeight: 500}}
 										>
 											{text ? sentenceCase(text) : ""}
 										</Typography>
@@ -57,7 +75,7 @@ const ReusableIntroContent = ({
 								<Card key={index}>
 									<img
 										src={image}
-										alt={`Tandem Skydiving ${index + 1}`}
+										alt={`Image ${index + 1}`}
 										style={{
 											width: "100%",
 											height: "100%",
