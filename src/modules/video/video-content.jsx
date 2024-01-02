@@ -1,7 +1,8 @@
-import { Container, Stack, Typography } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import PropTypes from "prop-types";
+import TitleSubtitle from "../title-subtitle";
 
-const ReusableVideoContent = ({ title, subTitle, src, height, textAlign }) => {
+const ReusableVideoContent = ({ title, subtitle, src, height, textAlign }) => {
 
 	return (
 		<div style={{ position: "relative", height: height ? height : "80vh" }}>
@@ -49,21 +50,11 @@ const ReusableVideoContent = ({ title, subTitle, src, height, textAlign }) => {
 						sx={{ height: "100%" }}
 						spacing={3}
 					>
-						<Typography
-							variant="h2"
-							component="div"
-							color="text.primary"
-						>
-							{title}
-						</Typography>
-						<Typography
-							variant="h6"
-							component="div"
-							color="text.primary"
-							textAlign={textAlign ? textAlign : "justify"}
-						>
-							{subTitle}
-						</Typography>
+						<TitleSubtitle
+							title={title}
+							subtitle={subtitle}
+							position="left"
+						/>
 					</Stack>
 				</Container>
 			</Stack>
@@ -73,7 +64,7 @@ const ReusableVideoContent = ({ title, subTitle, src, height, textAlign }) => {
 
 ReusableVideoContent.propTypes = {
 	title: PropTypes.string.isRequired,
-	subTitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	src: PropTypes.string.isRequired,
 	height: PropTypes.string.isRequired,
 	hasButton: PropTypes.bool.isRequired,

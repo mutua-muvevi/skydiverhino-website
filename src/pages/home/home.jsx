@@ -1,10 +1,10 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
 import HomeTandem from "./sections/tandem";
-import ReusableSpecs from "../../modules/specs";
 import HomeAFF from "./sections/aff";
 import Subscribe from "../../modules/subscribe/subscribe";
-import ReusableVideoContent from "../../modules/video/video-content";
+import HomeNews from "./sections/news";
+import HomeEvent from "./sections/event";
 
 const video =
 	"https://res.cloudinary.com/dqweh6zte/video/upload/v1698327008/skydive%20rhino/videos/skydive_1080p_u3mdwh.mp4";
@@ -23,20 +23,10 @@ const Home = () => {
 				subTitle={subtitle}
 			/>
 			<HomeTandem />
-			<ReusableVideoContent
-				src={video}
-				title="Tandem Skydiving"
-				subTitle={subtitle}
-				height="70vh"
-			/>
 			<HomeAFF />
-			<ReusableVideoContent
-				src={video}
-				title="Accelerated Freefall"
-				subTitle={subtitle}
-				height="70vh"
-			/>
 			<Subscribe />
+			<HomeEvent/>
+			<HomeNews/>
 		</Page>
 	);
 };

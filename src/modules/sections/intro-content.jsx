@@ -35,7 +35,6 @@ const ReusableIntroContent = ({
 							title={title}
 							subtitle={subTitle}
 							position="left"
-							color="rgba(255,255,255,0.5)"
 						/>
 						<div>
 							<Grid container spacing={3}>

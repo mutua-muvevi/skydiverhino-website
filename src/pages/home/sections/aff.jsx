@@ -19,7 +19,7 @@ const HomeAFF = () => {
 		<>
 			<ReusableIntroContent
 				title="Accelerated freefall"
-				subTitle="The best skydiving experience in the world"
+				subtitle="The best skydiving experience in the world"
 				content={content}
 				images={images}
 				backgroundImage={images[2]}
