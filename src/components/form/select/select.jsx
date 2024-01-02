@@ -70,6 +70,7 @@ const SelectField = ({
 				MenuProps={MenuProps}
 				defaultValue={defaultValue ? defaultValue : ""}
 				input={<OutlinedInput label={label} />}
+				variant={variant ? variant : "outlined"}
 			>
 				{options.map((item, pos) => {
 					return (

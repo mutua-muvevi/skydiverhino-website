@@ -96,6 +96,7 @@ const Subscribe = () => {
 												alignItems="center"
 												justifyContent="left"
 											>
+												{/* alert here */}
 												<Textfield
 													name="email"
 													variant="standard"
