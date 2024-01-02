@@ -1,7 +1,7 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
 import ContentBlocks from "../../modules/content/blocks";
-import Subscribe from "../../modules/subscribe";
+import Subscribe from "../../modules/subscribe/subscribe";
 import Instruments from "./sections/instruments";
 import Team from "./sections/team";
 

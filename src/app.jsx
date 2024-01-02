@@ -1,4 +1,4 @@
-import './fonts.css';
+import { AuthProvider } from "./auth/jwt-context";
 import { BrowserRouter } from "react-router-dom";
 
 //helmet provider
@@ -32,27 +32,29 @@ const App = () => {
 	return (
 		<ReduxProvider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
-				<HelmetProvider>
-					<LocalizationProvider dateAdapter={AdapterDateFns}>
-						<SettingsProvider>
-							<BrowserRouter>
-								<ScrollToTop />
-								<MotionLazyContainer>
-									<ThemeProvider>
-										<ThemeSettings>
-											<ThemeLocalization>
-												<SnackbarProvider>
-													<StyledChart />
-													<Router />
-												</SnackbarProvider>
-											</ThemeLocalization>
-										</ThemeSettings>
-									</ThemeProvider>
-								</MotionLazyContainer>
-							</BrowserRouter>
-						</SettingsProvider>
-					</LocalizationProvider>
-				</HelmetProvider>
+				<AuthProvider>
+					<HelmetProvider>
+						<LocalizationProvider dateAdapter={AdapterDateFns}>
+							<SettingsProvider>
+								<BrowserRouter>
+									<ScrollToTop />
+									<MotionLazyContainer>
+										<ThemeProvider>
+											<ThemeSettings>
+												<ThemeLocalization>
+													<SnackbarProvider>
+														<StyledChart />
+														<Router />
+													</SnackbarProvider>
+												</ThemeLocalization>
+											</ThemeSettings>
+										</ThemeProvider>
+									</MotionLazyContainer>
+								</BrowserRouter>
+							</SettingsProvider>
+						</LocalizationProvider>
+					</HelmetProvider>
+				</AuthProvider>
 			</PersistGate>
 		</ReduxProvider>
 	);
