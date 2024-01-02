@@ -62,7 +62,7 @@ export default function Footer() {
 			component="footer"
 			sx={{
 				py: 5,
-				textAlign: "center",
+				textAlign: "left",
 				position: "relative",
 				bgcolor: "background.default",
 			}}
@@ -96,12 +96,12 @@ export default function Footer() {
 				<Grid
 					container
 					justifyContent={{
-						xs: "center",
+						xs: "left",
 						md: "space-between",
 					}}
 					sx={{
 						textAlign: {
-							xs: "center",
+							xs: "left",
 							md: "left",
 						},
 					}}
@@ -120,7 +120,7 @@ export default function Footer() {
 						<Stack
 							spacing={1}
 							direction="row"
-							justifyContent={{ xs: "center", md: "flex-start" }}
+							justifyContent={{ xs: "left", md: "flex-start" }}
 							sx={{
 								mt: 5,
 								mb: { xs: 5, md: 0 },
@@ -128,7 +128,7 @@ export default function Footer() {
 						>
 							{_socials.map((social) => (
 								<IconButton key={social.name}>
-									<Iconify icon={social.icon} />
+									<Iconify icon={social.icon} sx={{color: "#fff"}} />
 								</IconButton>
 							))}
 						</Stack>
@@ -145,7 +145,7 @@ export default function Footer() {
 									key={list.headline}
 									spacing={2}
 									alignItems={{
-										xs: "center",
+										xs: "left",
 										md: "flex-start",
 									}}
 								>
@@ -164,9 +164,12 @@ export default function Footer() {
 											color="inherit"
 											variant="body2"
 										>
-											<Typography variant="h6" sx={{fontWeight: 500}}>
-												{link.name}
-											</Typography>
+											<Stack direction="row" spacing={1}>
+												<Iconify icon="mdi:circle-medium" />
+												<Typography variant="body2">
+													{link.name}
+												</Typography>
+											</Stack>
 										</Link>
 									))}
 								</Stack>
@@ -181,7 +184,7 @@ export default function Footer() {
 					sx={{
 						mt: 10,
 						pb: 5,
-						textAlign: { xs: "center", md: "left" },
+						textAlign: { xs: "left", md: "left" },
 					}}
 				>
 					© {fYear(2021)}. All rights reserved
