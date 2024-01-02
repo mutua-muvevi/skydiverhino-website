@@ -29,7 +29,6 @@ export const LazyNews = Loadable(lazy(() => import("../pages/news/news")));
 export const LazyGallery = Loadable(lazy(() => import("../pages/gallery/gallery")));
 export const LazyPricing = Loadable(lazy(() => import("../pages/pricing/pricing")));
 export const LazyReservation = Loadable(lazy(() => import("../pages/reservation/reservation")));
-export const LazyServices = Loadable(lazy(() => import("../pages/services/services")));
 export const LazyTandem = Loadable(lazy(() => import("../pages/tandem/tandem")));
 export const LazyAFF = Loadable(lazy(() => import("../pages/aff/aff")));
 

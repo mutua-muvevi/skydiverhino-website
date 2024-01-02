@@ -1,7 +1,6 @@
 import {
 	CardMedia,
 	Container,
-	Grid,
 	Stack,
 	Typography,
 	useMediaQuery,
@@ -75,16 +74,21 @@ const ContentBlocks = ({
 								{item.details}
 							</Typography>
 							
-							<img
-								src={item.image}
-								alt="Alt text"
-								style={{
-									flex: 1,
-									objectFit: "cover",
-									width: "100%",
-									height: isMd ? "400px" : "500px",
-								}}
-							/>
+							{
+								item.image ? (
+									<CardMedia
+										component="img"
+										sx={{
+											flex: 1,
+											objectFit: "cover",
+											width: "100%",
+											height: isMd ? "400px" : "500px",
+										}}
+										image={item.image}
+										alt="Alt text"
+									/>
+								) : null
+							}
 						</Stack>
 					))}
 				</Stack>
