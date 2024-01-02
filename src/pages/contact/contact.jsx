@@ -11,7 +11,7 @@ const Contact = () => {
 		<Page title="Contact us">
 			<ReusableBanner
 				title="Contact"
-				subTitle="The latest news from Skydive Rhino"
+				subtitle="The latest news from Skydive Rhino"
 				type="image"
 				src={image}
 				height="70vh"

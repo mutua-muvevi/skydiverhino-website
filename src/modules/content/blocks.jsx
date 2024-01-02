@@ -1,81 +1,104 @@
-import { Container, Grid, Stack, Typography } from "@mui/material";
+import {
+	CardMedia,
+	Container,
+	Grid,
+	Stack,
+	Typography,
+	useMediaQuery,
+	useTheme,
+} from "@mui/material";
+import PropTypes from "prop-types";
+import TitleSubtitle from "../title-subtitle";
 
-const title = "Content Blocks";
-const subTitle =
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo.";
+const ContentBlocks = ({
+	title,
+	subtitle,
+	content,
+	backgroundImage,
+}) => {
+	const theme = useTheme();
+	const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
-const content = [
-	{
-		title: "Content One",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-	{
-		title: "Content Two",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-	{
-		title: "Content Three",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-];
-
-const ContentBlocks = () => {
 	return (
-		<div spacing={3}>
+		<div
+			style={{
+				backgroundImage: backgroundImage
+					? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundImage})`
+					: "",
+				backgroundSize: "cover",
+				backgroundAttachment: "fixed",
+				color: backgroundImage ? "#fff" : theme.palette.text.primary,
+			}}
+		>
 			<Container maxWidth="xl">
-				<Stack sx={{ mb: 6 }}>
-					<Typography variant="h3" align="center">
-						{title}
-					</Typography>
-					<Typography variant="body1" align="center">
-						{subTitle}
-					</Typography>
-				</Stack>
+				<Stack
+					sx={{
+						paddingTop: 10,
+						paddingBottom: 10,
+					}}
+					spacing={3}
+				>
+					{title && (
+						<TitleSubtitle
+							title={title}
+							subtitle={subtitle}
+							position="left"
+						/>
+					)}
 
-				<Stack spacing={3}>
 					{content.map((item, index) => (
-						<div key={index}>
-							<Grid container spacing={3}>
-								<Grid
-									item
-									xs={12}
-									md={6}
-									order={{ md: index % 2 === 0 ? 1 : 2 }}
-								>
-									<Stack spacing={1}>
-										<Typography variant="subtitle2">
-											{item.title}
-										</Typography>
-										<Typography variant="body2">
-											{item.details}
-										</Typography>
-									</Stack>
-								</Grid>
-								<Grid
-									item
-									xs={12}
-									md={6}
-									order={{ md: index % 2 === 0 ? 2 : 1 }}
-								>
-									<img
-										src={item.image}
-										alt={item.title}
-										style={{
-											width: "100%",
-											height: "auto",
-										}}
-									/>
-								</Grid>
-							</Grid>
-						</div>
+						<Stack
+							key={index}
+							direction={
+								isMd
+									? `row-${index % 2 ? `reverse` : null}`
+									: "column"
+							}
+							spacing={3}
+							sx={{
+								flexWrap: "wrap",
+								justifyContent: "center",
+								pb: 3,
+								borderBottom: content.length === index ? "none" : `1px dashed ${
+									backgroundImage
+										? "#fff"
+										: theme.palette.text.primary
+								}}}`,
+							}}
+						>
+							<Typography
+								key={index}
+								sx={{ flex: 1, pr: index % 2 ? 0 : 3 }}
+								variant="h4"
+								textAlign="justify"
+							>
+								{item.details}
+							</Typography>
+							
+							<img
+								src={item.image}
+								alt="Alt text"
+								style={{
+									flex: 1,
+									objectFit: "cover",
+									width: "100%",
+									height: isMd ? "400px" : "500px",
+								}}
+							/>
+						</Stack>
 					))}
 				</Stack>
 			</Container>
 		</div>
 	);
+};
+
+ContentBlocks.propTypes = {
+	title: PropTypes.string,
+	subtitle: PropTypes.string,
+	content: PropTypes.array,
+	image: PropTypes.string,
+	backgroundImage: PropTypes.string,
 };
 
 export default ContentBlocks;

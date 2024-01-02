@@ -9,7 +9,7 @@ const Pricing = () => {
 		<Page title="Pricing">
 			<ReusableBanner
 				title="Pricing"
-				subTitle="The latest pricing from Skydive Rhino"
+				subtitle="The latest pricing from Skydive Rhino"
 				type="image"
 				src={image}
 				height="70vh"

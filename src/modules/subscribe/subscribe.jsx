@@ -1,11 +1,5 @@
-import {
-	Button,
-	Container,
-	Grid,
-	Stack,
-	useMediaQuery,
-} from "@mui/material";
-import { styled } from "@mui/system";
+import { Button, Container, Grid, Stack, useMediaQuery } from "@mui/material";
+import { alpha, styled, useTheme } from "@mui/system";
 
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -36,24 +30,11 @@ const FORM_VALIDATION = Yup.object().shape({
 		.required("Please add an email"),
 });
 
-const StyledWrapper = styled(Container)(({ theme }) => ({
-	borderRadius: theme.shape.borderRadius,
-	backgroundImage: `linear-gradient(to bottom, rgba(0,0,0, 0.7), rgba(0,0,0,0.76)), url(${Image})`,
-	backgroundSize: "cover",
-}));
-
 const StyledGrid = styled(Grid)(() => ({}));
 
 const StyledGridItemText = styled(Grid)(() => ({
 	paddingTop: "50px",
 	paddingBottom: "50px",
-}));
-
-const StyledButton = styled(Button)(() => ({
-	color: "#ffffff",
-	borderColor: "#ffffff",
-	width: "200px",
-	borderRadius: "5px",
 }));
 
 const imageStyle = {
@@ -63,6 +44,7 @@ const imageStyle = {
 
 const Subscribe = () => {
 	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
+	const theme = useTheme();
 
 	const submitHandler = (values) => {
 		console.log(values);
@@ -70,9 +52,26 @@ const Subscribe = () => {
 
 	return (
 		<>
-			<Stack sx={{ py: { xs: 5, md: 10, lg: 20 }, position: "relative", }}>
+			<Stack
+				sx={{
+					py: { xs: 5, md: 10, lg: 20 },
+					position: "relative",
+					backgroundImage: `linear-gradient(to bottom, rgba(0,0,0, 0.7), rgba(0,0,0,0.76)), url(${Image})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					backgroundAttachment: "fixed",
 
-				<StyledWrapper maxWidth="xl">
+				}}
+			>
+				<Container
+					maxWidth="xl"
+					sx={{
+						backgroundColor: alpha(
+							theme.palette.background.default,
+							0.7
+						),
+					}}
+				>
 					<StyledGrid container spacing={3}>
 						<StyledGridItemText
 							item
@@ -100,7 +99,6 @@ const Subscribe = () => {
 												title={emailCapture.title}
 												subtitle={emailCapture.subtitle}
 												position="left"
-												color="#fff"
 											/>
 
 											<Stack
@@ -114,14 +112,18 @@ const Subscribe = () => {
 													variant="standard"
 													size="small"
 													placeholder="Enter your email to subscribe"
-													inputColor="#ffffff"
+													inputColor="primary"
 												/>
-												<StyledButton
+												<Button
 													variant="outlined"
 													type="submit"
+													color="primary"
+													sx={{
+														width: "250px",
+													}}
 												>
 													Join us
-												</StyledButton>
+												</Button>
 											</Stack>
 										</Stack>
 									</Form>
@@ -130,7 +132,10 @@ const Subscribe = () => {
 						</StyledGridItemText>
 						{isDesktop && (
 							<Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
-								<Stack justifyContent="center" alignItems="center">
+								<Stack
+									justifyContent="center"
+									alignItems="center"
+								>
 									<img
 										src={Person}
 										alt="Subscribe to Afrogorithm Mail List"
@@ -140,7 +145,7 @@ const Subscribe = () => {
 							</Grid>
 						)}
 					</StyledGrid>
-				</StyledWrapper>
+				</Container>
 			</Stack>
 		</>
 	);
