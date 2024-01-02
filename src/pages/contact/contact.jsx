@@ -1,6 +1,6 @@
 import { Page } from "../../components/page";
 import ReusableBanner from "../../modules/banner/banner";
-import Subscribe from "../../modules/subscribe";
+import Subscribe from "../../modules/subscribe/subscribe";
 import ContactUpperBody from "./sections/body";
 import ContactForm from "./sections/form";
 
