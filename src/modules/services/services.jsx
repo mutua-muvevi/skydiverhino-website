@@ -35,7 +35,7 @@ const Services = ({
 			/>
 			<ServicePricing prices={prices} />
 			<ServiceRequirements requirements={requirements} />
-			<ServiceFAQ faq={faq.faq} backgroundImage={faq.image} />
+			<ServiceFAQ faq={faq} backgroundImage={faq.image} />
 			<ServiceGallery gallery={gallery} />
 
 			<Container maxWidth="xl" sx={{ py: 10 }}>

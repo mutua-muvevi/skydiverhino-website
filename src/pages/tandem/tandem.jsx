@@ -1,91 +1,70 @@
 import { Page } from "../../components/page";
 import Services from "../../modules/services/services";
 
-const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg";
-const content = [
-	{
-		title: "Content One",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-	{
-		title: "Content Two",
-		details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer faucibus volutpat est, sed consequat tortor ullamcorper ut. Nam ultrices justo ullamcorper bibendum congue. Etiam massa neque, ullamcorper at est quis, aliquet ultrices justo. Vivamus ultrices tortor tortor. In hac habitasse platea dictumst. Ut vitae cursus odio, et consectetur est. Nulla dignissim risus at risus dapibus aliquet. Suspendisse aliquet metus nec nisl laoreet scelerisque non pretium est.`,
-		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
-	},
-];
 
-const backgroundImageForContent =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1693131018/Officechest/users/bgbyh9316o4seul02hgp.jpg";
 
-const serviceData = {
+const tandemServiceData = {
 	banner: {
-		image: image,
+		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
 		title: "Tandem",
 		subtitle: "Tanden skydiving with Skydive Rhino",
 	},
 
 	contentBlocks: {
-		content: content,
-		backgroundImage: backgroundImageForContent,
+		content: [
+			{
+                title: "The Tandem Experience",
+                details: `Tandem skydiving offers a thrilling introduction to the world of skydiving. Strapped to an experienced instructor, you'll leap from the aircraft and freefall at exhilarating speeds before your instructor deploys the parachute. Enjoy breathtaking views as you gently glide back to earth.`,
+                image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
+            },
+            {
+                title: "Safety and Training",
+                details: `Your safety is our top priority. Before the jump, you'll receive a briefing covering the essential aspects of tandem skydiving, including safety procedures and what to expect during the jump. Our certified instructors are committed to ensuring a safe and unforgettable experience.`,
+                image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg",
+            },
+		],
+		backgroundImage: "https://res.cloudinary.com/dqweh6zte/image/upload/v1693131018/Officechest/users/bgbyh9316o4seul02hgp.jpg",
 	},
 
 	prices: {
-		title: "Tandem Prices",
-		subtitle: "Tandem skydiving prices",
+		title: "AFF Program Pricing",
+		subtitle: "Explore our competitive pricing for the Accelerated Free Fall course",
 		image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1673047324/skydive%20rhino/images/skydiving-gd90b87829_1920_ztat2b.jpg",
 		prices: [
 			{
-				title: "Tandem Skydive",
-				price: "$299",
+				title: "AFF Level 1",
+				price: "$350",
 				listItems: [
-					"30 seconds of freefall",
-					"5 minutes under canopy",
-					"Professional skydiving instructor",
-					"Training session",
-					"Gear rental",
-					"Complimentary beverage",
+					"Ground training session",
+					"First jump with two instructors",
+					"Gear rental included",
+					"Debriefing and logbook entry",
 				],
 			},
 			{
-				title: "Tandem Skydive Package 2",
-				price: "$299",
+				title: "AFF Full Course",
+				price: "$1,500",
 				listItems: [
-					"30 seconds of freefall",
-					"5 minutes under canopy",
-					"Professional skydiving instructor",
-					"Training session",
-					"Gear rental",
-					"Complimentary beverage",
+					"7 levels of progression",
+					"All jumps with instructors",
+					"All necessary gear rentals",
+					"Personal logbook",
+					"Graduation certificate upon completion",
 				],
 			},
 			{
-				title: "Tandem Skydive",
-				price: "$299",
+				title: "AFF Advanced Package",
+				price: "$2,200",
 				listItems: [
-					"30 seconds of freefall",
-					"5 minutes under canopy",
-					"Professional skydiving instructor",
-					"Training session",
-					"Gear rental",
-					"Complimentary beverage",
-				],
-			},
-			{
-				title: "Tandem Skydive",
-				price: "$299",
-				listItems: [
-					"30 seconds of freefall",
-					"5 minutes under canopy",
-					"Professional skydiving instructor",
-					"Training session",
-					"Gear rental",
-					"Complimentary beverage",
+					"Complete AFF course",
+					"5 coached solo jumps",
+					"Advanced freefall techniques",
+					"Preparation for skydiving license",
 				],
 			},
 		],
 	},
+	
 
 	requirements: {
 		title: "Tandem Requirements",
@@ -202,12 +181,12 @@ const Tandem = () => {
 		<Page title="Tandem">
 			<Services
 				bannerHeight="70vh"
-				banner={serviceData.banner}
-				contentBlocks={serviceData.contentBlocks}
-				prices={serviceData.prices}
-				requirements={serviceData.requirements}
-				faq={serviceData.faq}
-				gallery={serviceData.gallery}
+				banner={tandemServiceData.banner}
+				contentBlocks={tandemServiceData.contentBlocks}
+				prices={tandemServiceData.prices}
+				requirements={tandemServiceData.requirements}
+				faq={tandemServiceData.faq}
+				gallery={tandemServiceData.gallery}
 			/>
 		</Page>
 	);

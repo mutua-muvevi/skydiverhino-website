@@ -39,13 +39,13 @@ const ReusableFAQ = ({ faq, backgroundImage }) => {
 			<Container maxWidth="xl">
 				<Stack direction="column" spacing={5}>
 					<TitleSubtitle
-						title="Frequently Asked Questions"
+						title={faq.title ? faq.title : "Frequently Asked Questions"}
 						subtitle="Here are some of the most common questions we get asked about skydiving."
 						divider
 						dividerColor="#fff"
 					/>
 
-					{faq.map((item, index) => (
+					{faq.faq.map((item, index) => (
 						<Accordion key={index} onChange={handleChange(index)}>
 							<AccordionSummary
 								aria-controls={`panel${index}a-content`}

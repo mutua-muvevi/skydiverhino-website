@@ -28,11 +28,6 @@ const navConfig = [
 		path: ALL_ROUTES.AFF,
 	},
 	{
-		title: "Pricing",
-		icon: <Iconify icon="ic:round-grain" />,
-		path: ALL_ROUTES.PRICING,
-	},
-	{
 		title: "News",
 		icon: <Iconify icon="ic:round-grain" />,
 		path: ALL_ROUTES.NEWS,
@@ -47,33 +42,6 @@ const navConfig = [
 		icon: <Iconify icon="ic:round-grain" />,
 		path: ALL_ROUTES.CONTACT,
 	},
-	// {
-	// 	title: "Pages",
-	// 	path: "/pages",
-	// 	icon: <Iconify icon="eva:file-fill" />,
-	// 	children: [
-	// 		{
-	// 			subheader: "Other",
-	// 			items: [
-	// 				{ title: "About us", path: ALL_ROUTES.about },
-	// 				{ title: "Contact us", path: ALL_ROUTES.contact },
-	// 				{ title: "FAQs", path: ALL_ROUTES.faqs },
-	// 				{ title: "Pricing", path: ALL_ROUTES.pricing },
-	// 				{ title: "Payment", path: ALL_ROUTES.payment },
-	// 				{ title: "Maintenance", path: ALL_ROUTES.maintenance },
-	// 				{ title: "Coming Soon", path: ALL_ROUTES.comingSoon },
-	// 			],
-	// 		},
-	// 		{
-	// 			subheader: "Error",
-	// 			items: [
-	// 				{ title: "Page 403", path: ALL_ROUTES.page403 },
-	// 				{ title: "Page 404", path: ALL_ROUTES.page404 },
-	// 				{ title: "Page 500", path: ALL_ROUTES.page500 },
-	// 			],
-	// 		},
-	// 	],
-	// },
 ];
 
 export default navConfig;
