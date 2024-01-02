@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 
-const BannerImage = ({ title, subTitle, src, height, hasButton }) => {
+const BannerImage = ({ title, subtitle, src, height, hasButton }) => {
 	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 	return (
 		<Stack
@@ -40,19 +40,20 @@ const BannerImage = ({ title, subTitle, src, height, hasButton }) => {
 						>
 							<Stack direction="column">
 								<Typography
-									variant="h2"
+									variant="h1"
 									component="div"
 									color="text.primary"
+									sx={{textTransform: "uppercase"}}
 								>
 									{title}
 								</Typography>
 								{isDesktop ? (
 									<Typography
-										variant="h6"
+										variant="h3"
 										component="div"
 										color="text.primary"
 									>
-										{subTitle}
+										{subtitle}
 									</Typography>
 								) : null}
 							</Stack>
@@ -74,7 +75,7 @@ BannerImage.propTypes = {
 	src: PropTypes.string.isRequired,
 	height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	title: PropTypes.string.isRequired,
-	subTitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	hasButton: PropTypes.bool,
 };
 

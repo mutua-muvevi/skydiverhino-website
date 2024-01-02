@@ -6,7 +6,7 @@ import {
 import BannerImage from "./image";
 import BannerVideo from "./video";
 
-const ReusableBanner = ({ title, subTitle, type, src, height, hasButton }) => {
+const ReusableBanner = ({ title, subtitle, type, src, height, hasButton }) => {
 	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 
 	return (
@@ -20,7 +20,7 @@ const ReusableBanner = ({ title, subTitle, type, src, height, hasButton }) => {
 			{type === "video" ? (
 				<BannerVideo
 					title={title}
-					subTitle={subTitle}
+					subtitle={subtitle}
 					src={src}
 					height={height}
 					hasButton={hasButton}
@@ -28,7 +28,7 @@ const ReusableBanner = ({ title, subTitle, type, src, height, hasButton }) => {
 			) : (
 				<BannerImage
 					title={title}
-					subTitle={subTitle}
+					subtitle={subtitle}
 					src={src}
 					height={height}
 					hasButton={hasButton}
@@ -40,7 +40,7 @@ const ReusableBanner = ({ title, subTitle, type, src, height, hasButton }) => {
 
 ReusableBanner.propTypes = {
 	title: PropTypes.string.isRequired,
-	subTitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(["video", "image"]).isRequired,
 	src: PropTypes.string.isRequired,
 	height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

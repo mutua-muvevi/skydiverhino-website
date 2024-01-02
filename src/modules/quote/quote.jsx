@@ -11,7 +11,7 @@ const ReusableQuote = ({ content, backgroundImage }) => {
 			sx={{
 				backgroundAttachment: "fixed",
 				color: theme.palette.text.primary,
-				textAlign: "center",
+				textAlign: "left",
 				backgroundImage: backgroundImage
 					? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundImage})`
 					: "",

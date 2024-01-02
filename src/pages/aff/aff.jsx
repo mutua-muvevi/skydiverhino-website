@@ -8,7 +8,7 @@ const AFF = () => {
 		<Page title="AFF">
 			<ReusableBanner
 				title="AFF"
-				subTitle="The latest news from Skydive Rhino"
+				subtitle="The latest news from Skydive Rhino"
 				type="image"
 				src={image}
 				height="70vh"

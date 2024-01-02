@@ -1,7 +1,7 @@
 import { Button, Container, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import PropTypes from "prop-types";
 
-const BannerVideo = ({ title, subTitle, src, height, hasButton  }) => {
+const BannerVideo = ({ title, subtitle, src, height, hasButton  }) => {
 	const isDesktop = useMediaQuery((theme) => theme.breakpoints.up("lg"));
 	return (
 		<div style={{ position: "relative", height: height ? height : "80vh" }}>
@@ -61,7 +61,7 @@ const BannerVideo = ({ title, subTitle, src, height, hasButton  }) => {
 						sx={{display: isDesktop ? "block" : "none"}}
 						textAlign="justify"
 					>
-						{subTitle}
+						{subtitle}
 					</Typography>
 				</Stack>
 			</Container>
@@ -74,7 +74,7 @@ BannerVideo.propTypes = {
 	src: PropTypes.string.isRequired,
 	height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	title: PropTypes.string.isRequired,
-	subTitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	hasButton: PropTypes.bool,
 };
 

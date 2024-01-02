@@ -26,7 +26,7 @@ const Home = () => {
 				src={video}
 				height="70vh"
 				title="Skydive Rhino"
-				subTitle={subtitle}
+				subtitle={subtitle}
 			/>
 			<LeftRight
 				title="Skydiving"
@@ -37,9 +37,9 @@ const Home = () => {
 			<HomeTandem />
 			<ReusableQuote content={subtitle} />
 			<HomeAFF />
-			<Subscribe />
 			<HomeEvent />
 			<HomeNews />
+			<Subscribe />
 		</Page>
 	);
 };

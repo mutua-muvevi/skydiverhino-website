@@ -12,7 +12,7 @@ const Gallery = () => {
 				src={video}
 				height="100%"
 				title="Our Gallery"
-				subTitle="The best skydiving experience in the world"
+				subtitle="The best skydiving experience in the world"
 			/>
 			<GalleryBody/>
 		</Page>

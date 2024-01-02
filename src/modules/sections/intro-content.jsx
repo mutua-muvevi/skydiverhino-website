@@ -8,7 +8,7 @@ const ReusableIntroContent = ({
 	images,
 	content,
 	title,
-	subTitle,
+	subtitle,
 	backgroundImage,
 }) => {
 	const theme = useTheme();
@@ -45,7 +45,7 @@ const ReusableIntroContent = ({
 					<Stack spacing={3}>
 						<TitleSubtitle
 							title={title}
-							subtitle={subTitle}
+							subtitle={subtitle}
 							position="left"
 						/>
 						<div>
@@ -96,7 +96,7 @@ ReusableIntroContent.propTypes = {
 	images: PropTypes.arrayOf(PropTypes.string).isRequired,
 	content: PropTypes.arrayOf(PropTypes.string).isRequired,
 	title: PropTypes.string.isRequired,
-	subTitle: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
 	backgroundImage: PropTypes.string,
 };
 
