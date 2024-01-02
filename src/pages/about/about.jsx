@@ -4,8 +4,6 @@ import ContentBlocks from "../../modules/content/blocks";
 import ReusableQuote from "../../modules/quote/quote";
 import Subscribe from "../../modules/subscribe/subscribe";
 import AboutFAQ from "./sections/faq";
-import Instruments from "./sections/instruments";
-import Team from "./sections/team";
 
 const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335568/skydive%20rhino/videos/skydive_landing_aqzfpy.jpg"
 const content = [

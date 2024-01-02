@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Stack, Typography, alpha } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
 const TitleSubtitle = ({ title, subtitle, position, color, divider, dividerColor }) => {
