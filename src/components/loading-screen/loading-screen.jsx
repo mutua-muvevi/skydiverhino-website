@@ -42,7 +42,7 @@ export default function LoadingScreen() {
 
 	const isDashboard =
 		isInitialized &&
-		pathname.includes("/admin/freelance/home") &&
+		pathname.includes("/admin/skydive/home") &&
 		isDesktop;
 
 	const size =
