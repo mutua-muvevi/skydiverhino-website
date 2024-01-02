@@ -3,6 +3,7 @@ import ReusableBanner from "../../modules/banner/banner";
 import ContentBlocks from "../../modules/content/blocks";
 import ReusableQuote from "../../modules/quote/quote";
 import Subscribe from "../../modules/subscribe/subscribe";
+import AboutFAQ from "./sections/faq";
 import Instruments from "./sections/instruments";
 import Team from "./sections/team";
 
@@ -39,8 +40,7 @@ const About = () => {
 				content={content}
 				backgroundImage={image}
 			/>
-			<Team/>
-			<Instruments/>
+			<AboutFAQ/>
 			<Subscribe/>
 		</Page>
 	);
