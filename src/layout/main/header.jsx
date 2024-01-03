@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 // @mui
 import { useTheme } from "@mui/material/styles";
 import { Box, Button, AppBar, Toolbar, Container } from "@mui/material";
@@ -16,10 +16,13 @@ import Logo from "../../components/logo";
 import navConfig from "./nav/config-navigation";
 import NavMobile from "./nav/mobile";
 import NavDesktop from "./nav/desktop";
+import ModalComponent from "../../components/modal/modal";
+import Book from "../../pages/book/book";
 
 // ----------------------------------------------------------------------
 
 export default function Header() {
+	const [open, setOpen] = useState(false);
 	const carouselRef = useRef(null);
 
 	const theme = useTheme();
@@ -28,58 +31,81 @@ export default function Header() {
 
 	const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
+	const handleBookModal = () => {
+		setOpen(true);
+	};
+
 	return (
-		<AppBar
-			ref={carouselRef}
-			color="transparent"
-			sx={{ boxShadow: 0, borderBottom: `1px dashed ${theme.palette.text.disabled}` }}
-		>
-			<Toolbar
-				disableGutters
+		<>
+			<AppBar
+				ref={carouselRef}
+				color="transparent"
 				sx={{
-					height: {
-						xs: HEADER.H_MOBILE,
-						md: HEADER.H_MAIN_DESKTOP,
-					},
-					transition: theme.transitions.create(
-						["height", "background-color"],
-						{
-							easing: theme.transitions.easing.easeInOut,
-							duration: theme.transitions.duration.shorter,
-						}
-					),
-					...(isOffset && {
-						...bgBlur({ color: theme.palette.background.default }),
-						height: {
-							md: HEADER.H_MAIN_DESKTOP - 16,
-						},
-					}),
+					boxShadow: 0,
+					borderBottom: `1px dashed ${theme.palette.text.disabled}`,
 				}}
 			>
-				<Container
-					maxWidth="xl"
-					sx={{ height: 1, display: "flex", alignItems: "center" }}
+				<Toolbar
+					disableGutters
+					sx={{
+						height: {
+							xs: HEADER.H_MOBILE,
+							md: HEADER.H_MAIN_DESKTOP,
+						},
+						transition: theme.transitions.create(
+							["height", "background-color"],
+							{
+								easing: theme.transitions.easing.easeInOut,
+								duration: theme.transitions.duration.shorter,
+							}
+						),
+						...(isOffset && {
+							...bgBlur({ color: theme.palette.background.default }),
+							height: {
+								md: HEADER.H_MAIN_DESKTOP - 16,
+							},
+						}),
+					}}
 				>
-					<Logo />
+					<Container
+						maxWidth="xl"
+						sx={{ height: 1, display: "flex", alignItems: "center" }}
+					>
+						<Logo />
 
-					<Box sx={{ flexGrow: 1 }} />
+						<Box sx={{ flexGrow: 1 }} />
 
-					{isDesktop && (
-						<NavDesktop isOffset={isOffset} data={navConfig} />
-					)}
+						{isDesktop && (
+							<NavDesktop isOffset={isOffset} data={navConfig} />
+						)}
 
-					<Button variant="contained" target="_blank" rel="noopener">
-						Book
-					</Button>
+						<Button
+							variant="contained"
+							type="button"
+							onClick={handleBookModal}
+						>
+							Book Now
+						</Button>
 
-					{!isDesktop && (
-						<NavMobile isOffset={isOffset} data={navConfig} />
-					)}
-				</Container>
-			</Toolbar>
+						{!isDesktop && (
+							<NavMobile isOffset={isOffset} data={navConfig} />
+						)}
+					</Container>
+				</Toolbar>
 
-			{isOffset && <Shadow />}
-		</AppBar>
+				{isOffset && <Shadow />}
+			</AppBar>
+
+			<ModalComponent
+				title="Book Now"
+				open={open}
+				onClose={() => setOpen(false)}
+				height={700}
+				maxWidth="lg"
+			>
+				<Book onClose={() => setOpen(false)} />
+			</ModalComponent>
+		</>
 	);
 }
 
