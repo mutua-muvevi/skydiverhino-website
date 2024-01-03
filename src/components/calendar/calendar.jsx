@@ -17,7 +17,7 @@ import {
 	deleteEvent,
 } from "../../redux/slices/calendar";
 // routes
-import { PATH_DASHBOARD } from "../../routes/path";
+import { ALL_ROUTES } from "../../routes/path";
 // utils
 import { fTimestamp } from "../../utils/format-time";
 // hooks
@@ -253,7 +253,7 @@ export default function CalendarPage() {
 					links={[
 						{
 							name: "Dashboard",
-							href: PATH_DASHBOARD.root,
+							href: ALL_ROUTES.root,
 						},
 						{
 							name: "Calendar",

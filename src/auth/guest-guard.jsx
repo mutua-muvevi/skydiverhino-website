@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Navigate } from "react-router-dom";
 // routes
-import { PATH_DASHBOARD } from "../routes/path";
+import { ALL_ROUTES } from "../routes/path";
 // components
 import LoadingScreen from "../components/loading-screen";
 //
@@ -18,8 +18,8 @@ export default function GuestGuard({ children }) {
 
 	
 	if (isAuthenticated) {
-		{console.log("guest guard", PATH_DASHBOARD.general.home)}
-		return <Navigate to={PATH_DASHBOARD.general.home} />;
+		{console.log("guest guard", ALL_ROUTES.general.home)}
+		return <Navigate to={ALL_ROUTES.general.home} />;
 	}
 
 	if (!isInitialized ) {
