@@ -9,12 +9,7 @@ import {
 import PropTypes from "prop-types";
 import TitleSubtitle from "../title-subtitle";
 
-const ContentBlocks = ({
-	title,
-	subtitle,
-	content,
-	backgroundImage,
-}) => {
+const ContentBlocks = ({ title, subtitle, content, backgroundImage }) => {
 	const theme = useTheme();
 	const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -58,37 +53,47 @@ const ContentBlocks = ({
 								flexWrap: "wrap",
 								justifyContent: "center",
 								pb: 3,
-								borderBottom: content.length === index ? "none" : `1px dashed ${
-									backgroundImage
-										? "#fff"
-										: theme.palette.text.primary
-								}}}`,
+								borderBottom:
+									content.length === index
+										? "none"
+										: `1px dashed ${
+												backgroundImage
+													? "#fff"
+													: theme.palette.text.primary
+										  }}}`,
 							}}
 						>
-							<Typography
-								key={index}
+							<Stack
+								direction="column"
+								spacing={3}
 								sx={{ flex: 1, pr: index % 2 ? 0 : 3 }}
-								variant="h4"
-								textAlign="justify"
 							>
-								{item.details}
-							</Typography>
-							
-							{
-								item.image ? (
-									<CardMedia
-										component="img"
-										sx={{
-											flex: 1,
-											objectFit: "cover",
-											width: "100%",
-											height: isMd ? "400px" : "500px",
-										}}
-										image={item.image}
-										alt="Alt text"
-									/>
-								) : null
-							}
+								<Typography variant="h3">
+									{item.title}
+								</Typography>
+								
+								<Typography
+									key={index}
+									variant="h4"
+									textAlign="justify"
+								>
+									{item.details}
+								</Typography>
+							</Stack>
+
+							{item.image ? (
+								<CardMedia
+									component="img"
+									sx={{
+										flex: 1,
+										objectFit: "cover",
+										width: "100%",
+										height: isMd ? "400px" : "500px",
+									}}
+									image={item.image}
+									alt="Alt text"
+								/>
+							) : null}
 						</Stack>
 					))}
 				</Stack>

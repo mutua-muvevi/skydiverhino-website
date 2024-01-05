@@ -64,7 +64,6 @@ const steps = ["Date & Time", "Participants", "Agreements", "Preview"];
 
 const Book = () => {
 	const [activeStep, setActiveStep] = useState(0);
-	const [submitted, setSubmitted] = useState(false);
 
 	const [alertMessage, setAlertMessage] = useState("");
 	const [alertSeverity, setAlertSeverity] = useState("info");

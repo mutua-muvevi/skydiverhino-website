@@ -6,10 +6,12 @@ import ServiceRequirements from "./sections/requirements";
 import ServiceGallery from "./sections/gallery";
 import ServiceFAQ from "./sections/faq";
 import { Button, Container, Stack, Typography } from "@mui/material";
+import IntroDescription from "./sections/intro";
 
 const Services = ({
 	bannerHeight,
 	banner,
+	intro,
 	contentBlocks,
 	faq,
 	requirements,
@@ -28,6 +30,9 @@ const Services = ({
 				type="image"
 				src={banner.image}
 				height={bannerHeight ? bannerHeight : "70vh"}
+			/>
+			<IntroDescription
+				content={intro}
 			/>
 			<ContentBlocks
 				backgroundImage={contentBlocks.backgroundImage}
@@ -57,6 +62,7 @@ Services.propTypes = {
 	bannerHeight: PropTypes.string,
 
 	banner: PropTypes.object,
+	intro: PropTypes.string,
 	contentBlocks: PropTypes.object,
 
 	prices: PropTypes.object,
