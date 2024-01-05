@@ -59,7 +59,7 @@ const ServicePricing = ({ prices }) => {
 												{price.title}
 											</Typography>
 											<Typography variant="h4">
-												{price.price}
+												{price.price.amount}{" "}{price.price.currency}
 											</Typography>
 										</Stack>
 									</AccordionSummary>

@@ -62,6 +62,7 @@ Services.propTypes = {
 	bannerHeight: PropTypes.string,
 
 	banner: PropTypes.object,
+	intro: PropTypes.string,
 	contentBlocks: PropTypes.object,
 
 	prices: PropTypes.object,

@@ -29,7 +29,7 @@ const IntroDescription = ({ content, backgroundImage }) => {
 						variant="h4"
 						textAlign="justify"
 					>
-						{content ?  sentenceCase(content) : ""}
+						{content ? sentenceCase(content) : ""}
 					</Typography>
 				</Stack>
 			</Container>
