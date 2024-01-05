@@ -11,6 +11,8 @@ import axios from "../utils/axios";
 import localStorageAvailable from "../utils/localstorage-available";
 //
 import { isValidToken, setSession } from "./utils";
+import { useDispatch } from "../redux/store";
+import { fetchAllServices } from "../redux/slices/services";
 
 // ----------------------------------------------------------------------
 
@@ -74,7 +76,13 @@ export function AuthProvider({ children }) {
 
 	const storageAvailable = localStorageAvailable();
 
+	const reduxDispatch = useDispatch();
+
+	
 	const initialize = useCallback(async () => {
+		//fetch service
+		reduxDispatch(fetchAllServices());
+		
 		try {
 			const accessToken = storageAvailable
 				? localStorage.getItem("accessToken")
@@ -86,6 +94,9 @@ export function AuthProvider({ children }) {
 				const response = await axios.get("/api/account/my-account");
 
 				const { user } = response.data;
+
+				
+
 
 				dispatch({
 					type: "INITIAL",
