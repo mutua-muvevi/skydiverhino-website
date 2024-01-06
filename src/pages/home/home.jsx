@@ -19,24 +19,66 @@ const content = [
 ];
 
 const Home = () => {
+	const homepage = {
+		banner: {
+			src: video,
+			title: "Skydive Rhino",
+			subtitle: subtitle,
+		},
+		intro: {
+			title: "Skydiving",
+			subtitle: "The best skydiving experience in the world",
+			image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+			content: content,
+		},
+		tandem: {
+			title: "Tandem",
+			subtitle: "The best skydiving experience in the world",
+			image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+			content: content,
+			gallery: [
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg",
+			]
+		},
+		quote: subtitle,
+		aff: {
+			title: "Accelerated freefall",
+			subtitle: "The best skydiving experience in the world",
+			image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+			content: content,
+			gallery: [
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg",
+				"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg",
+			]
+		},
+	};
 	return (
 		<Page title="Home">
 			<ReusableBanner
 				type="video"
-				src={video}
 				height="70vh"
-				title="Skydive Rhino"
-				subtitle={subtitle}
+				src={homepage.banner.src}
+				title={homepage.banner.title}
+				subtitle={homepage.banner.subtitle}
 			/>
 			<LeftRight
-				title="Skydiving"
-				subtitle="The best skydiving experience in the world"
-				image="https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg"
-				content={content}
+				title={homepage.intro.title}
+				subtitle={homepage.intro.subtitle}
+				image={homepage.intro.image}
+				content={homepage.intro.content}
 			/>
-			<HomeTandem />
-			<ReusableQuote content={subtitle} />
-			<HomeAFF />
+			<HomeTandem tandem={homepage.tandem}/>
+			<ReusableQuote content={homepage.quote} />
+			<HomeAFF aff={homepage.aff} />
 			<HomeEvent />
 			<HomeNews />
 			<Subscribe />
