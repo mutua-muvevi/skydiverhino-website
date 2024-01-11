@@ -47,7 +47,7 @@ const LINKS = [
 ];
 
 const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704967275/Skydive/about/AFF11_pzd4my.jpg";
 
 // ----------------------------------------------------------------------
 

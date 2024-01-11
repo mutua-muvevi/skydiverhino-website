@@ -17,7 +17,7 @@ import { truncateStr } from "../../../utils/format-string";
 import Iconify from "../../../components/iconify";
 
 const image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704967635/Skydive/about/AFF4_jpvf4v.jpg";
 
 const content = [
 	{

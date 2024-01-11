@@ -8,7 +8,7 @@ import Textfield from "../../components/form/textfield/textfield";
 import TitleSubtitle from "../title-subtitle";
 
 const Image =
-	"https://res.cloudinary.com/dqweh6zte/image/upload/v1690303441/officechest/services/jog7skpaltedt5a3eips.jpg";
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1704967243/Skydive/about/AFF7_ywlm9n.jpg";
 const Person =
 	"https://res.cloudinary.com/dqweh6zte/image/upload/v1698335580/skydive%20rhino/videos/skydive_landing_vwertical_xs68xt.jpg";
 
@@ -128,7 +128,7 @@ const Subscribe = () => {
 								>
 									<img
 										src={Person}
-										alt="Subscribe to Afrogorithm Mail List"
+										alt="Subscribe to Skydive Rhino Mail List"
 										style={imageStyle}
 									/>
 								</Stack>
