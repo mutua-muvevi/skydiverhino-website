@@ -99,7 +99,7 @@ export function fetchSingleService(serviceID) {
 
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/service/fetch/single/${serviceID}`,
+				`https://skydiverhino-backend.onrender.com/api/service/fetch/single/${serviceID}`,
 				{
 					headers: {
 						"Content-Type": "application/json",
@@ -126,7 +126,7 @@ export function fetchAllServices() {
 
 		try {
 			const response = await axios.get(
-				"http://localhost:8100/api/service/fetch/all",
+				"https://skydiverhino-backend.onrender.com/api/service/fetch/all",
 				{
 					headers: {
 						"Content-Type": "application/json",

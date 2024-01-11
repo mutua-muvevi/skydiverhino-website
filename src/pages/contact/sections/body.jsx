@@ -14,19 +14,19 @@ const contactItems = [
 		icon: "material-symbols:mark-email-read-rounded",
 		title: "Email",
 		subtitle: "info@skydiverhinokenya.com",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		text: "Email us anytime",
 	},
 	{
 		icon: "tabler:phone-filled",
 		title: "Call us",
 		subtitle: "+254 700 000 000, +254 700 000 001",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		text: "Call us during business hours",
 	},
 	{
 		icon: "zondicons:location",
 		title: "Location",
 		subtitle: "Nairobi, Kenya",
-		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec aliquam ipsum. Curabitur sed lobortis justo, eu iaculis ex. Aliquam",
+		text: "Wilson Airport, off Langata Road, Nairobi Kenya",
 	},
 ];
 

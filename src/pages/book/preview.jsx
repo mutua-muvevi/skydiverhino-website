@@ -1,4 +1,4 @@
-import { Card, Stack, Typography, useTheme } from "@mui/material";
+import { Stack, Typography, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
 
 const BookingPreview = ({ values }) => {

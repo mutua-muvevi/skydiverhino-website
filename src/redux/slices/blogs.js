@@ -101,7 +101,7 @@ export function fetchAllBlogs() {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/blog/fetch/all`,
+				`https://skydiverhino-backend.onrender.com/api/blog/fetch/all`,
 				{
 					headers: {
 						"Content-Type": "application/json",
@@ -127,7 +127,7 @@ export function fetchSingleBlog(id) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/blog/fetch/single/${id}`,
+				`https://skydiverhino-backend.onrender.com/api/blog/fetch/single/${id}`,
 				{
 					headers: {
 						"Content-Type": "application/json",

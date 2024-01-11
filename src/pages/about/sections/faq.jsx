@@ -2,7 +2,7 @@ import ReusableFAQ from "../../../modules/FAQ/faq";
 
 
 
-const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg"
+const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1704967272/Skydive/about/Tandem9_gd8elt.jpg"
 
 const faq = {
 	faq: [

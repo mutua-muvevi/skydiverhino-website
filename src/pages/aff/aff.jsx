@@ -17,7 +17,7 @@ const AFF = () => {
 		banner: {
 			image: affService.thumbnail,
 			title: affService.name,
-			subtitle: "Tanden skydiving with Skydive Rhino",
+			subtitle: "Accelerated Free fall skydiving with Skydive Rhino",
 		},
 
 		introDescription: affService.introDescription,
@@ -29,7 +29,7 @@ const AFF = () => {
 		},
 
 		prices: {
-			title: "Tandem Pricing",
+			title: "Accelerated Free fall Pricing",
 			subtitle:
 				"Explore our competitive pricing for the Accelerated Free Fall course",
 			image: "https://res.cloudinary.com/dqweh6zte/image/upload/v1673047324/skydive%20rhino/images/skydiving-gd90b87829_1920_ztat2b.jpg",
@@ -37,7 +37,7 @@ const AFF = () => {
 		},
 
 		requirements: {
-			title: "Tandem Requirements",
+			title: "Accelerated Free fall Requirements",
 			subtitle: "Requirements for tandem skydiving",
 
 			requirements: affService.requirements,
@@ -51,7 +51,7 @@ const AFF = () => {
 		},
 
 		gallery: {
-			title: "Out Tandem Gallery",
+			title: "Our Accelerated Free fall Gallery",
 			subtitle: "Our tandem skydiving gallery",
 			images: affService.gallery,
 		},

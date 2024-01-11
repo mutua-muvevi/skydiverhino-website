@@ -84,7 +84,7 @@ export function fetchAllAnnouncements(userID, token) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/announcement/fetch/all`,
+				`https://skydiverhino-backend.onrender.com/api/announcement/fetch/all`,
 				{
 					headers: {
 						"Content-Type": "application/json",
@@ -111,7 +111,7 @@ export function fetchSingleAnnouncement(userID, token, id) {
 		dispatch(slice.actions.startLoading());
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/announcement/fetch/single/${id}`,
+				`https://skydiverhino-backend.onrender.com/api/announcement/fetch/single/${id}`,
 				{
 					headers: {
 						"Content-Type": "application/json",
