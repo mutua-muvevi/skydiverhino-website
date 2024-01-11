@@ -85,7 +85,7 @@ export function fetchAllEvents() {
 
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/event/fetch/all`,
+				`https://skydiverhino-backend.onrender.com/api/event/fetch/all`,
 			);
 			const data = await response.data;
 			dispatch(slice.actions.fetchAllEvents(data));
@@ -108,7 +108,7 @@ export function fetchSingleEvent(eventID) {
 
 		try {
 			const response = await axios.get(
-				`http://localhost:8100/api/event/fetch/${eventID}`,
+				`https://skydiverhino-backend.onrender.com/api/event/fetch/${eventID}`,
 			);
 			const data = await response.data;
 			dispatch(slice.actions.fetchSingleEvent(data));
