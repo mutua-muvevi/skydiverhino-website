@@ -40,13 +40,14 @@ const LINKS = [
 	{
 		headline: "Contact",
 		children: [
-			{ name: "support@minimals.cc", href: "#" },
-			{ name: "Los Angeles, 359  Hidden Valley Road", href: "#" },
+			{ name: "info@skydiverhinokenya.com", href: "#" },
+			{ name: "Wilson Airport, off Langata Road, Nairobi Kenya", href: "#" },
 		],
 	},
 ];
 
-const image ="https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg"
+const image =
+	"https://res.cloudinary.com/dqweh6zte/image/upload/v1693092854/Officechest/users/vo6vt18bzi8q2xzdjbqp.jpg";
 
 // ----------------------------------------------------------------------
 
@@ -72,7 +73,10 @@ export default function Footer() {
 
 				<Typography variant="h6" component="div">
 					© All rights reserved
-					<Link href="https://skydiverhinokenya.com/"> skydiverhinokenya.com </Link>
+					<Link href="https://skydiverhinokenya.com/">
+						{" "}
+						skydiverhinokenya.com{" "}
+					</Link>
 				</Typography>
 			</Container>
 		</Box>
@@ -91,7 +95,6 @@ export default function Footer() {
 				py: 10,
 			}}
 		>
-
 			<Container maxWidth="xl" sx={{ pt: 10 }}>
 				<Grid
 					container
@@ -111,10 +114,15 @@ export default function Footer() {
 					</Grid>
 
 					<Grid item xs={8} md={3}>
-						<Typography variant="h6" sx={{ pr: { md: 5 }, fontWeight:500 }}>
-							The starting point for your next project with
-							Minimal UI Kit, built on the newest version of
-							Material-UI ©, ready to be customized to your style.
+						<Typography
+							variant="h6"
+							sx={{ pr: { md: 5 }, fontWeight: 500 }}
+							textAlign="justify"
+						>
+							Embark on an unforgettable adventure with Skydive
+							Rhino Kenya, where the thrill of tandem skydiving
+							and the challenge of our Accelerated Free Fall (AFF)
+							program converge in the skies above Nairobi
 						</Typography>
 
 						<Stack
@@ -128,7 +136,10 @@ export default function Footer() {
 						>
 							{_socials.map((social) => (
 								<IconButton key={social.name}>
-									<Iconify icon={social.icon} sx={{color: "#fff"}} />
+									<Iconify
+										icon={social.icon}
+										sx={{ color: "#fff" }}
+									/>
 								</IconButton>
 							))}
 						</Stack>
@@ -149,10 +160,7 @@ export default function Footer() {
 										md: "flex-start",
 									}}
 								>
-									<Typography
-										component="div"
-										variant="h5"
-									>
+									<Typography component="div" variant="h5">
 										{list.headline}
 									</Typography>
 
